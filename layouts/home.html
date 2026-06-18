@@ -44,33 +44,47 @@
   <section class="flow">
     <div>
       <p class="eyebrow">How it works</p>
-      <h2>SIP clients and trunks enter through Kamailio. Media flows through RTPengine.</h2>
+      <h2>A small set of focused components, wired together by Kubernetes.</h2>
       <p>
-        KubeVoIP keeps the SIP control plane Kubernetes-native while minimizing
-        state inside pods. Direct calls route from Kamailio to registered SIP
-        users or trunks; application calls route to an AsteriskPool when needed.
+        KubeVoIP keeps configuration in Kubernetes and runtime routing data in
+        PostgreSQL. Pods can be replaced, rescheduled, and scaled without
+        turning every change into a hand-edited SIP config file.
       </p>
     </div>
-    <ol class="flow-list">
-      <li>SIP users and provider trunks send INVITEs to a SIPGateway.</li>
-      <li>Kamailio authenticates callers and reads dial policy from PostgreSQL.</li>
-      <li>RTPengine rewrites SDP and relays media through stable replica addresses.</li>
-      <li>Calls reach SIP users, trunks, or Asterisk application pods.</li>
-    </ol>
+    <div class="component-map" aria-label="KubeVoIP component flow">
+      <span>SIP clients</span>
+      <span>Trunks</span>
+      <strong>SIPGateway</strong>
+      <strong>MediaRelay</strong>
+      <span>SIP users</span>
+      <span>AsteriskPool</span>
+    </div>
   </section>
 
-  <section class="install">
-    <p class="eyebrow">Install</p>
-    <h2>Start with Helm OCI.</h2>
-    <pre><code>helm install kubevoip oci://ghcr.io/kubevoip/charts/kubevoip \
+  <section class="start">
+    <div class="install-card">
+      <p class="eyebrow">Install</p>
+      <h2>Start with Helm, then initialize with the CLI.</h2>
+      <pre><code>helm install kubevoip oci://ghcr.io/kubevoip/charts/kubevoip \
   --version 0.5.0 \
-  --namespace telephony --create-namespace</code></pre>
-    <p>
-      Then use the CLI to initialize a working platform:
-      <code>uvx kubevoip -n telephony init</code>.
-      The <a href="https://docs.kubevoip.com/getting-started/quickstart/">two-phone quickstart</a>
-      walks through the full flow.
-    </p>
+  --namespace telephony --create-namespace
+
+uvx kubevoip -n telephony init</code></pre>
+    </div>
+    <div class="next-steps">
+      <p class="eyebrow">Next</p>
+      <h2>Bring your own network and database choices.</h2>
+      <p>
+        The quickstart gives you two phones that can call each other. The docs
+        cover LoadBalancer behavior, external addresses, PostgreSQL, trunks,
+        and production-oriented operations.
+      </p>
+      <div class="link-list">
+        <a href="https://docs.kubevoip.com/getting-started/quickstart/">Two-phone quickstart</a>
+        <a href="https://docs.kubevoip.com/networking/sip-on-kubernetes/">SIP networking guide</a>
+        <a href="https://docs.kubevoip.com/operations/postgresql/">PostgreSQL operations</a>
+      </div>
+    </div>
   </section>
 </main>
 {{ end }}

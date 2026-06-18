@@ -72,7 +72,8 @@
 
 .features article,
 .flow,
-.install {
+.install-card,
+.next-steps {
   border: 1px solid var(--kubevoip-blue-soft);
   border-radius: 1rem;
   padding: 1.5rem;
@@ -97,25 +98,87 @@
 }
 
 .flow {
+  align-items: center;
   display: grid;
   gap: 2rem;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.8fr);
-  margin-bottom: 4rem;
+  grid-template-columns: minmax(0, 0.85fr) minmax(20rem, 1fr);
+  margin-bottom: 2rem;
 }
 
-.flow-list {
+.component-map {
   display: grid;
-  gap: 0.75rem;
-  margin: 0;
+  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.install pre {
+.component-map span,
+.component-map strong {
+  background: rgba(6, 48, 111, 0.04);
+  border: 1px solid var(--kubevoip-blue-soft);
+  border-radius: 999px;
+  color: #172339;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.component-map strong {
+  background: var(--kubevoip-blue);
+  color: #fff;
+}
+
+.start {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.75fr);
+}
+
+.install-card {
+  background:
+    radial-gradient(circle at top right, rgba(6, 48, 111, 0.08), transparent 16rem),
+    #fff;
+}
+
+.install-card pre {
   border-radius: 1rem;
+  margin-bottom: 0;
   padding: 1rem;
 }
 
+.next-steps {
+  align-content: center;
+  display: grid;
+}
+
+.link-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.link-list a {
+  align-items: center;
+  border: 1px solid var(--kubevoip-blue-soft);
+  border-radius: 0.85rem;
+  color: var(--kubevoip-blue);
+  display: flex;
+  font-weight: 700;
+  justify-content: space-between;
+  padding: 0.75rem 0.9rem;
+  text-decoration: none;
+}
+
+.link-list a::after {
+  content: "→";
+}
+
+.link-list a:hover {
+  background: rgba(6, 48, 111, 0.04);
+}
+
 @media (max-width: 768px) {
-  .flow {
+  .flow,
+  .start {
     grid-template-columns: 1fr;
   }
 }
