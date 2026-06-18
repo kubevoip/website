@@ -65,7 +65,12 @@
     <pre><code>helm install kubevoip oci://ghcr.io/kubevoip/charts/kubevoip \
   --version 0.5.0 \
   --namespace telephony --create-namespace</code></pre>
-    <p>Then follow the <a href="https://docs.kubevoip.com/getting-started/quickstart/">two-phone quickstart</a>.</p>
+    <p>
+      Then use the CLI to create users and routes:
+      <code>uvx kubevoip --help</code>.
+      The <a href="https://docs.kubevoip.com/getting-started/quickstart/">two-phone quickstart</a>
+      walks through the full flow.
+    </p>
   </section>
 </main>
 {{ end }}
