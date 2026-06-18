@@ -1,9 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#f8fbff"/>
-  <circle cx="220" cy="315" r="120" fill="#0b4d8b"/>
+  <circle cx="220" cy="315" r="120" fill="#06306f"/>
   <circle cx="220" cy="315" r="66" fill="#fff"/>
-  <circle cx="220" cy="315" r="32" fill="#0b4d8b"/>
-  <text x="400" y="285" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800" fill="#102033">KubeVoIP</text>
-  <text x="405" y="360" font-family="Inter, Arial, sans-serif" font-size="34" fill="#34495e">Kubernetes-native SIP and VoIP platform</text>
+  <circle cx="220" cy="315" r="32" fill="#06306f"/>
+  <text x="400" y="285" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800" fill="#06306f">KubeVoIP</text>
+  <text x="405" y="360" font-family="Inter, Arial, sans-serif" font-size="34" fill="#06306f" opacity="0.78">Kubernetes-native SIP and VoIP platform</text>
 </svg>
-
