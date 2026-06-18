@@ -1,0 +1,70 @@
+{{ define "main" }}
+<main class="kubevoip-home">
+  <section class="hero">
+    <p class="eyebrow">Kubernetes VoIP operator</p>
+    <h1>KubeVoIP is a Kubernetes-native SIP platform.</h1>
+    <p class="lead">
+      Run SIP on Kubernetes with Kamailio gateways, RTPengine media relays,
+      Asterisk application pods, and PostgreSQL-backed routing state.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary btn-lg" href="https://docs.kubevoip.com/getting-started/quickstart/">Get started</a>
+      <a class="btn btn-outline-primary btn-lg" href="https://github.com/kubevoip/kubevoip">View on GitHub</a>
+    </div>
+  </section>
+
+  <section class="features" aria-label="KubeVoIP features">
+    <article>
+      <h2>Kubernetes APIs</h2>
+      <p>Manage SIP users, trunks, routes, media relays, gateways, and application pods through Kubernetes resources.</p>
+    </article>
+    <article>
+      <h2>SIP edge</h2>
+      <p>Use Kamailio for registration and routing while RTPengine handles media address rewriting and relay placement.</p>
+    </article>
+    <article>
+      <h2>Runtime routing</h2>
+      <p>Store users, dial policies, trunks, routes, and registrations in PostgreSQL so pods can stay disposable.</p>
+    </article>
+    <article>
+      <h2>Provider-neutral trunking</h2>
+      <p>Model inbound and outbound SIP trunks without coupling the platform to one carrier or cloud.</p>
+    </article>
+    <article>
+      <h2>Asterisk applications</h2>
+      <p>Run private Asterisk application pods for workloads such as Echo while direct calls avoid unnecessary application state.</p>
+    </article>
+    <article>
+      <h2>Namespace isolation</h2>
+      <p>Install one operator release per telephony namespace with namespaced Secret access and shared cluster-scoped CRDs.</p>
+    </article>
+  </section>
+
+  <section class="flow">
+    <div>
+      <p class="eyebrow">How it works</p>
+      <h2>SIP clients and trunks enter through Kamailio. Media flows through RTPengine.</h2>
+      <p>
+        KubeVoIP keeps the SIP control plane Kubernetes-native while minimizing
+        state inside pods. Direct calls route from Kamailio to registered SIP
+        users or trunks; application calls route to an AsteriskPool when needed.
+      </p>
+    </div>
+    <ol class="flow-list">
+      <li>SIP users and provider trunks send INVITEs to a SIPGateway.</li>
+      <li>Kamailio authenticates callers and reads dial policy from PostgreSQL.</li>
+      <li>RTPengine rewrites SDP and relays media through stable replica addresses.</li>
+      <li>Calls reach SIP users, trunks, or Asterisk application pods.</li>
+    </ol>
+  </section>
+
+  <section class="install">
+    <p class="eyebrow">Install</p>
+    <h2>Start with Helm OCI.</h2>
+    <pre><code>helm install kubevoip oci://ghcr.io/kubevoip/charts/kubevoip \
+  --version 0.5.0 \
+  --namespace telephony --create-namespace</code></pre>
+    <p>Then follow the <a href="https://docs.kubevoip.com/getting-started/quickstart/">two-phone quickstart</a>.</p>
+  </section>
+</main>
+{{ end }}

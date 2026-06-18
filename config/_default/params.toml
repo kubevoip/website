@@ -1,0 +1,50 @@
+title = "KubeVoIP | Kubernetes-native SIP and VoIP platform"
+description = "KubeVoIP is a Kubernetes VoIP operator for SIP platforms using Kamailio, RTPengine, Asterisk, and PostgreSQL."
+images = ["cover.svg"]
+mainSections = ["pages"]
+
+[social]
+  twitter = "kubevoip"
+
+[doks]
+  flexSearch = false
+  colorMode = "auto"
+  colorModeToggler = true
+  navbarSticky = true
+  containerBreakpoint = "lg"
+  navBarButton = true
+  navBarButtonUrl = "https://docs.kubevoip.com/getting-started/quickstart/"
+  navBarButtonText = "Get started"
+  showSearch = []
+  searchExclKinds = []
+  searchExclTypes = []
+  sectionSwitcher = false
+  sectionNav = []
+  toTopButton = true
+  breadcrumbTrail = false
+  headlineHash = true
+  scrollSpy = true
+  backgroundDots = true
+  aiButtons = false
+  editPage = false
+  lastMod = false
+  repoHost = "GitHub"
+  docsRepo = "https://github.com/kubevoip/website"
+  docsRepoBranch = "main"
+
+[seo]
+  [seo.title]
+    separator = "|"
+    suffix = "KubeVoIP"
+  [seo.description]
+    summaryFallback = "KubeVoIP is a Kubernetes-native SIP and VoIP platform."
+  [seo.favicons]
+    icon = "icon.png"
+    svgIcon = "icon.svg"
+  [seo.schemas]
+    type = "Organization"
+    logo = "icon.svg"
+    name = "KubeVoIP"
+    sameAs = ["https://github.com/kubevoip/kubevoip", "https://docs.kubevoip.com"]
+    images = ["cover.svg"]
+    product = ["pages"]

@@ -1,0 +1,73 @@
+.kubevoip-home {
+  padding-bottom: 4rem;
+}
+
+.kubevoip-home .hero {
+  max-width: 58rem;
+  padding: 5rem 0 4rem;
+}
+
+.kubevoip-home .eyebrow {
+  color: var(--sl-color-primary-600, #0b4d8b);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kubevoip-home h1 {
+  font-size: clamp(2.75rem, 7vw, 5.75rem);
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+}
+
+.kubevoip-home .lead {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  max-width: 46rem;
+}
+
+.kubevoip-home .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.features {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  margin: 2rem 0 4rem;
+}
+
+.features article,
+.flow,
+.install {
+  border: 1px solid var(--sl-color-gray-200, #dfe5ec);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.flow {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.8fr);
+  margin-bottom: 4rem;
+}
+
+.flow-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.install pre {
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .flow {
+    grid-template-columns: 1fr;
+  }
+}
+

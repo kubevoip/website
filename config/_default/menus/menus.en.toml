@@ -1,0 +1,35 @@
+[[main]]
+  name = "Docs"
+  url = "https://docs.kubevoip.com/"
+  weight = 10
+
+[[main]]
+  name = "GitHub"
+  url = "https://github.com/kubevoip/kubevoip"
+  weight = 20
+
+[[main]]
+  name = "Releases"
+  url = "https://github.com/kubevoip/kubevoip/releases"
+  weight = 30
+
+[[social]]
+  name = "GitHub"
+  url = "https://github.com/kubevoip/kubevoip"
+  weight = 10
+
+[[footer]]
+  name = "Docs"
+  url = "https://docs.kubevoip.com/"
+  weight = 10
+
+[[footer]]
+  name = "Security"
+  url = "https://github.com/kubevoip/kubevoip/security"
+  weight = 20
+
+[[footer]]
+  name = "License"
+  url = "https://github.com/kubevoip/kubevoip/blob/main/LICENSE"
+  weight = 30
+
