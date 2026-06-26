@@ -4,6 +4,7 @@ on:
     branches: [main]
   pull_request:
 permissions:
+  attestations: write
   contents: read
   pages: write
   id-token: write
@@ -25,6 +26,11 @@ jobs:
           extended: true
       - run: npm ci
       - run: npm run build
+      - name: Attest Pages artifact contents
+        if: github.event_name == 'push'
+        uses: actions/attest-build-provenance@v4.1.0
+        with:
+          subject-path: public/**
       - uses: actions/upload-pages-artifact@v4
         if: github.event_name == 'push'
         with:
@@ -39,4 +45,3 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-
