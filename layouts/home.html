@@ -6,7 +6,8 @@
     <h1>KubeVoIP is a Kubernetes-native SIP and VoIP platform.</h1>
     <p class="lead">
       Run SIP on Kubernetes with Kamailio gateways, RTPengine media relays,
-      Asterisk application pods, and PostgreSQL-backed routing state.
+      Asterisk application pods, PostgreSQL-backed routing state, and
+      vendor-neutral SIP/RTP observability.
     </p>
     <div class="actions">
       <a class="btn btn-primary btn-lg" href="https://docs.kubevoip.com/getting-started/quickstart/">Get started</a>
@@ -26,6 +27,10 @@
     <article>
       <h2>Runtime routing</h2>
       <p>Store users, dial policies, trunks, routes, and registrations in PostgreSQL so pods can stay disposable.</p>
+    </article>
+    <article>
+      <h2>SIP/RTP observability</h2>
+      <p>Read safe SIP summaries and RTP relay logs from Kubernetes streams, or export opt-in HEP captures to HOMER.</p>
     </article>
     <article>
       <h2>Provider-neutral trunking</h2>
@@ -77,11 +82,12 @@ uvx kubevoip -n telephony init</code></pre>
       <p>
         The quickstart gives you two phones that can call each other. The docs
         cover LoadBalancer behavior, external addresses, PostgreSQL, trunks,
-        and production-oriented operations.
+        observability, and production-oriented operations.
       </p>
       <div class="link-list">
         <a href="https://docs.kubevoip.com/getting-started/quickstart/">Two-phone quickstart</a>
         <a href="https://docs.kubevoip.com/networking/sip-on-kubernetes/">SIP networking guide</a>
+        <a href="https://docs.kubevoip.com/operations/observability/">SIP/RTP observability</a>
         <a href="https://docs.kubevoip.com/operations/postgresql/">PostgreSQL operations</a>
       </div>
     </div>
